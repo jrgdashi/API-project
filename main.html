@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Currency & Holydays</title>
+		<style>
+			body, form{
+				margin: 0 auto;	
+				max-width:800px;
+				overflow-x:hidden;
+			}
+			fieldset{
+				display: flex;
+			}
+			input#artist{
+				flex-grow:100;
+				margin: 0 20px;
+			}
+		</style>
+	</head>
+	<body style="background-color:#0a0a0a;">
+		<form action="search" method="get">
+			<img src="../images/banner.jpg" alt="Currency Search" />
+			<fieldset style="border: 5px solid #000000;">
+				<label for="currency" style="color: rgb(255, 255, 255)">Enter currency ID : </label>
+				<input id="currency" name="currency" type="text" />
+				<input type="submit" value="Search" />
+			</fieldset>
+		</form>	
+	</body>
+</html>
