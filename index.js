@@ -47,7 +47,7 @@ function stream_to_message(stream, callback, ...args){
 }
 
 function create_search_request(Currency, res){
-	const search_endpoint= 'https://v6.exchangerate-api.com/v6/75c4baffc67f6868c8b21ea9/enriched/USD/'+Currency;
+	const search_endpoint= 'https://v6.exchangerate-api.com/v6/API-KEY/enriched/USD/'+Currency;
 	const search_request= https.request(search_endpoint);
 	search_request.once("error", err => {throw err});
 	search_request.once("response", (search_result_stream) => stream_to_message(search_result_stream, recived_search_result,Currency, res));
@@ -64,7 +64,7 @@ function recived_search_result(serialzied_search_object, currency, res){
 }	
 
 function create_search_request2(code,currency, conversion, res){
-	const search_endpoint2= 'https://calendarific.com/api/v2/holidays?&api_key=93bed68022b0e77de8843f771dee60fdd8267657&country='+code+'&year=2022';
+	const search_endpoint2= 'https://calendarific.com/api/v2/holidays?&api_key=-API-KEY-&country='+code+'&year=2022';
 	const search_request= https.request(search_endpoint2);
 	search_request.once("error", err => {throw err});
 	search_request.once("response", (search_result_stream2) => stream_to_message(search_result_stream2, recived_search_result2,currency, conversion, res));
